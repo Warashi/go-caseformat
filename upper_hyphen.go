@@ -4,29 +4,29 @@ import (
 	"strings"
 )
 
-type UpperHyphen string
+type upperHyphen string
 
-func (s UpperHyphen) ToLowerHyphen() string {
+func (s upperHyphen) ToLowerHyphen() string {
 	return strings.ToLower(string(s))
 }
 
-func (s UpperHyphen) ToLowerUnderscore() string {
+func (s upperHyphen) ToLowerUnderscore() string {
 	return strings.ToLower(s.ToUpperUnderscore())
 }
 
-func (s UpperHyphen) ToLowerCamel() string {
-	return LowerHyphen(s.ToLowerHyphen()).ToLowerCamel()
+func (s upperHyphen) ToLowerCamel() string {
+	return lowerHyphen(s.ToLowerHyphen()).ToLowerCamel()
 }
 
-func (s UpperHyphen) ToUpperHyphen() string {
+func (s upperHyphen) ToUpperHyphen() string {
 	return string(s)
 }
 
-func (s UpperHyphen) ToUpperUnderscore() string {
+func (s upperHyphen) ToUpperUnderscore() string {
 	return strings.ReplaceAll(string(s), string(hyphen), string(underscore))
 }
 
-func (s UpperHyphen) ToUpperCamel() string {
-	return LowerHyphen(s.ToLowerHyphen()).ToUpperCamel()
+func (s upperHyphen) ToUpperCamel() string {
+	return lowerHyphen(s.ToLowerHyphen()).ToUpperCamel()
 }
 

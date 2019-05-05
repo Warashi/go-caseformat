@@ -5,9 +5,9 @@ import (
 	"unicode"
 )
 
-type LowerHyphen string
+type lowerHyphen string
 
-func (s LowerHyphen) toCamel(toUpper bool) string {
+func (s lowerHyphen) toCamel(toUpper bool) string {
 	var b strings.Builder
 	b.Grow(len(s))
 
@@ -27,27 +27,27 @@ func (s LowerHyphen) toCamel(toUpper bool) string {
 	return b.String()
 }
 
-func (s LowerHyphen) ToLowerHyphen() string {
+func (s lowerHyphen) ToLowerHyphen() string {
 	return string(s)
 }
 
-func (s LowerHyphen) ToLowerUnderscore() string {
+func (s lowerHyphen) ToLowerUnderscore() string {
 	return strings.ReplaceAll(string(s), string(hyphen), string(underscore))
 }
 
-func (s LowerHyphen) ToLowerCamel() string {
+func (s lowerHyphen) ToLowerCamel() string {
 	return s.toCamel(false)
 }
 
-func (s LowerHyphen) ToUpperHyphen() string {
+func (s lowerHyphen) ToUpperHyphen() string {
 	return strings.ToUpper(string(s))
 }
 
-func (s LowerHyphen) ToUpperUnderscore() string {
+func (s lowerHyphen) ToUpperUnderscore() string {
 	return strings.ToUpper(s.ToLowerUnderscore())
 }
 
-func (s LowerHyphen) ToUpperCamel() string {
+func (s lowerHyphen) ToUpperCamel() string {
 	return s.toCamel(true)
 }
 

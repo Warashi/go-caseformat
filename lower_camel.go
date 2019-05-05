@@ -5,7 +5,7 @@ import (
 	"unicode"
 )
 
-type LowerCamel string
+type lowerCamel string
 
 type beforeCase int
 
@@ -16,7 +16,7 @@ const (
 	deliminator
 )
 
-func (s LowerCamel) toLowerDelim(delim rune) string {
+func (s lowerCamel) toLowerDelim(delim rune) string {
 	rs := []rune(s)
 	ret := make([]rune, 0, len(rs)*2)
 
@@ -54,27 +54,27 @@ func (s LowerCamel) toLowerDelim(delim rune) string {
 	return string(ret)
 }
 
-func (s LowerCamel) ToLowerHyphen() string {
+func (s lowerCamel) ToLowerHyphen() string {
 	return s.toLowerDelim(hyphen)
 }
 
-func (s LowerCamel) ToLowerUnderscore() string {
+func (s lowerCamel) ToLowerUnderscore() string {
 	return s.toLowerDelim(underscore)
 }
 
-func (s LowerCamel) ToLowerCamel() string {
+func (s lowerCamel) ToLowerCamel() string {
 	return string(s)
 }
 
-func (s LowerCamel) ToUpperHyphen() string {
+func (s lowerCamel) ToUpperHyphen() string {
 	return strings.ToUpper(s.ToLowerHyphen())
 }
 
-func (s LowerCamel) ToUpperUnderscore() string {
+func (s lowerCamel) ToUpperUnderscore() string {
 	return strings.ToUpper(s.ToLowerUnderscore())
 }
 
-func (s LowerCamel) ToUpperCamel() string {
+func (s lowerCamel) ToUpperCamel() string {
 	rs := []rune(s)
 	rs[0] = unicode.ToUpper(rs[0])
 	return string(rs)

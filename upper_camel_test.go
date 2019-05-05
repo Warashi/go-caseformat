@@ -1,23 +1,27 @@
-package caseformat
+package caseformat_test
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/Warashi/go-caseformat"
+)
 
 func TestUpperCamel_ToLowerHyphen(t *testing.T) {
 	tests := []struct {
 		name string
-		s    UpperCamel
+		s    string
 		want string
 	}{
 		{
 			name: "normal_case",
-			s:    UpperCamel("UpperCamel"),
+			s:    "UpperCamel",
 			want: "upper-camel",
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := tt.s.ToLowerHyphen(); got != tt.want {
-				t.Errorf("UpperCamel.ToLowerHyphen() = %v, want %v", got, tt.want)
+			if got := caseformat.FromUpperCamel(tt.s).ToLowerHyphen(); got != tt.want {
+				t.Errorf("upperCamel.ToLowerHyphen() = %v, want %v", got, tt.want)
 			}
 		})
 	}
@@ -26,19 +30,19 @@ func TestUpperCamel_ToLowerHyphen(t *testing.T) {
 func TestUpperCamel_ToLowerUnderscore(t *testing.T) {
 	tests := []struct {
 		name string
-		s    UpperCamel
+		s    string
 		want string
 	}{
 		{
 			name: "normal_case",
-			s:    UpperCamel("UpperCamel"),
+			s:    "UpperCamel",
 			want: "upper_camel",
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := tt.s.ToLowerUnderscore(); got != tt.want {
-				t.Errorf("UpperCamel.ToLowerUnderscore() = %v, want %v", got, tt.want)
+			if got := caseformat.FromUpperCamel(tt.s).ToLowerUnderscore(); got != tt.want {
+				t.Errorf("upperCamel.ToLowerUnderscore() = %v, want %v", got, tt.want)
 			}
 		})
 	}
@@ -47,19 +51,19 @@ func TestUpperCamel_ToLowerUnderscore(t *testing.T) {
 func TestUpperCamel_ToLowerCamel(t *testing.T) {
 	tests := []struct {
 		name string
-		s    UpperCamel
+		s    string
 		want string
 	}{
 		{
 			name: "normal_case",
-			s:    UpperCamel("UpperCamel"),
+			s:    "UpperCamel",
 			want: "upperCamel",
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := tt.s.ToLowerCamel(); got != tt.want {
-				t.Errorf("UpperCamel.ToLowerCamel() = %v, want %v", got, tt.want)
+			if got := caseformat.FromUpperCamel(tt.s).ToLowerCamel(); got != tt.want {
+				t.Errorf("upperCamel.ToLowerCamel() = %v, want %v", got, tt.want)
 			}
 		})
 	}
@@ -68,19 +72,19 @@ func TestUpperCamel_ToLowerCamel(t *testing.T) {
 func TestUpperCamel_ToUpperHyphen(t *testing.T) {
 	tests := []struct {
 		name string
-		s    UpperCamel
+		s    string
 		want string
 	}{
 		{
 			name: "normal_case",
-			s:    UpperCamel("UpperCamel"),
+			s:    "UpperCamel",
 			want: "UPPER-CAMEL",
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := tt.s.ToUpperHyphen(); got != tt.want {
-				t.Errorf("UpperCamel.ToUpperHyphen() = %v, want %v", got, tt.want)
+			if got := caseformat.FromUpperCamel(tt.s).ToUpperHyphen(); got != tt.want {
+				t.Errorf("upperCamel.ToUpperHyphen() = %v, want %v", got, tt.want)
 			}
 		})
 	}
@@ -89,19 +93,19 @@ func TestUpperCamel_ToUpperHyphen(t *testing.T) {
 func TestUpperCamel_ToUpperUnderscore(t *testing.T) {
 	tests := []struct {
 		name string
-		s    UpperCamel
+		s    string
 		want string
 	}{
 		{
 			name: "normal_case",
-			s:    UpperCamel("UpperCamel"),
+			s:    "UpperCamel",
 			want: "UPPER_CAMEL",
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := tt.s.ToUpperUnderscore(); got != tt.want {
-				t.Errorf("UpperCamel.ToUpperUnderscore() = %v, want %v", got, tt.want)
+			if got := caseformat.FromUpperCamel(tt.s).ToUpperUnderscore(); got != tt.want {
+				t.Errorf("upperCamel.ToUpperUnderscore() = %v, want %v", got, tt.want)
 			}
 		})
 	}
@@ -110,19 +114,19 @@ func TestUpperCamel_ToUpperUnderscore(t *testing.T) {
 func TestUpperCamel_ToUpperCamel(t *testing.T) {
 	tests := []struct {
 		name string
-		s    UpperCamel
+		s    string
 		want string
 	}{
 		{
 			name: "normal_case",
-			s:    UpperCamel("UpperCamel"),
+			s:    "UpperCamel",
 			want: "UpperCamel",
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := tt.s.ToUpperCamel(); got != tt.want {
-				t.Errorf("UpperCamel.ToUpperCamel() = %v, want %v", got, tt.want)
+			if got := caseformat.FromUpperCamel(tt.s).ToUpperCamel(); got != tt.want {
+				t.Errorf("upperCamel.ToUpperCamel() = %v, want %v", got, tt.want)
 			}
 		})
 	}
