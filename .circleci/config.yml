@@ -1,0 +1,12 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/golang:1.12.4
+    environment:
+      GO111MODULE: "on"
+    steps:
+      - checkout
+      - run: go build
+      - run: go test
+      - run: go vet
