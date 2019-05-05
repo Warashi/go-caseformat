@@ -28,12 +28,10 @@ func (s LowerCamel) toLowerDelim(delim rune) string {
 		switch {
 		case unicode.IsLower(rs[i]):
 			switch before {
-			case lower:
+			case lower, deliminator:
 				ret = append(ret, rs[i])
 			case upper:
 				ret = append(ret, delim, rs[i])
-			case deliminator:
-				ret = append(ret, rs[i])
 			}
 			before = lower
 		case unicode.IsUpper(rs[i]):
@@ -42,9 +40,7 @@ func (s LowerCamel) toLowerDelim(delim rune) string {
 				ret = append(ret, unicode.ToLower(rs[i]), delim)
 				before = deliminator
 				continue
-			case upper:
-				ret = append(ret, unicode.ToLower(rs[i]))
-			case deliminator:
+			case upper, deliminator:
 				ret = append(ret, unicode.ToLower(rs[i]))
 			}
 			before = upper
