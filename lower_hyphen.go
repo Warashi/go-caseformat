@@ -6,7 +6,6 @@ import (
 )
 
 type LowerHyphen string
-const lowerHyphenDelimiter = '-'
 
 func (s LowerHyphen) toCamel(toUpper bool) string {
 	var b strings.Builder
@@ -14,7 +13,7 @@ func (s LowerHyphen) toCamel(toUpper bool) string {
 
 	rs := []rune(s)
 	for i := range rs {
-		if rs[i] == lowerHyphenDelimiter {
+		if rs[i] == hyphen {
 			toUpper = true
 			continue
 		}
@@ -33,7 +32,7 @@ func (s LowerHyphen) ToLowerHyphen() string {
 }
 
 func (s LowerHyphen) ToLowerUnderscore() string {
-	return strings.ReplaceAll(string(s), string(lowerHyphenDelimiter), "_")
+	return strings.ReplaceAll(string(s), string(hyphen), string(underscore))
 }
 
 func (s LowerHyphen) ToLowerCamel() string {
