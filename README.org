@@ -1,0 +1,3 @@
+* CaseFormat
+
+utility for convert case formats
