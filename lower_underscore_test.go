@@ -9,7 +9,7 @@ func TestLowerUnderscore_ToLowerHyphen(t *testing.T) {
 		want string
 	}{
 		{
-			name: "正常系",
+			name: "normal_case",
 			s:    LowerUnderscore("lower_underscore"),
 			want: "lower-underscore",
 		},
@@ -30,7 +30,7 @@ func TestLowerUnderscore_ToLowerUnderscore(t *testing.T) {
 		want string
 	}{
 		{
-			name: "正常系",
+			name: "normal_case",
 			s:    LowerUnderscore("lower_underscore"),
 			want: "lower_underscore",
 		},
@@ -51,7 +51,7 @@ func TestLowerUnderscore_ToLowerCamel(t *testing.T) {
 		want string
 	}{
 		{
-			name: "正常系",
+			name: "normal_case",
 			s:    LowerUnderscore("lower_underscore"),
 			want: "lowerUnderscore",
 		},
@@ -72,7 +72,7 @@ func TestLowerUnderscore_ToUpperHyphen(t *testing.T) {
 		want string
 	}{
 		{
-			name: "正常系",
+			name: "normal_case",
 			s:    LowerUnderscore("lower_underscore"),
 			want: "LOWER-UNDERSCORE",
 		},
@@ -93,7 +93,7 @@ func TestLowerUnderscore_ToUpperUnderscore(t *testing.T) {
 		want string
 	}{
 		{
-			name: "正常系",
+			name: "normal_case",
 			s:    LowerUnderscore("lower_underscore"),
 			want: "LOWER_UNDERSCORE",
 		},
@@ -114,7 +114,7 @@ func TestLowerUnderscore_ToUpperCamel(t *testing.T) {
 		want string
 	}{
 		{
-			name: "正常系",
+			name: "normal_case",
 			s:    LowerUnderscore("lower_underscore"),
 			want: "LowerUnderscore",
 		},

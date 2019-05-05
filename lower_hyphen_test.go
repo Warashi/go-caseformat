@@ -11,7 +11,7 @@ func TestLowerHyphen_ToLowerHyphen(t *testing.T) {
 		want string
 	}{
 		{
-			name: "正常系",
+			name: "normal_case",
 			s:    LowerHyphen("lower-hyphen"),
 			want: "lower-hyphen",
 		},
@@ -32,7 +32,7 @@ func TestLowerHyphen_ToLowerUnderscore(t *testing.T) {
 		want string
 	}{
 		{
-			name: "正常系",
+			name: "normal_case",
 			s:    LowerHyphen("lower-hyphen"),
 			want: "lower_hyphen",
 		},
@@ -53,7 +53,7 @@ func TestLowerHyphen_ToLowerCamel(t *testing.T) {
 		want string
 	}{
 		{
-			name: "正常系",
+			name: "normal_case",
 			s:    LowerHyphen("lower-hyphen"),
 			want: "lowerHyphen",
 		},
@@ -74,7 +74,7 @@ func TestLowerHyphen_ToUpperHyphen(t *testing.T) {
 		want string
 	}{
 		{
-			name: "正常系",
+			name: "normal_case",
 			s:    LowerHyphen("lower-hyphen"),
 			want: "LOWER-HYPHEN",
 		},
@@ -95,7 +95,7 @@ func TestLowerHyphen_ToUpperUnderscore(t *testing.T) {
 		want string
 	}{
 		{
-			name: "正常系",
+			name: "normal_case",
 			s:    LowerHyphen("lower-hyphen"),
 			want: "LOWER_HYPHEN",
 		},
@@ -116,7 +116,7 @@ func TestLowerHyphen_ToUpperCamel(t *testing.T) {
 		want string
 	}{
 		{
-			name: "正常系",
+			name: "normal_case",
 			s:    LowerHyphen("lower-hyphen"),
 			want: "LowerHyphen",
 		},
