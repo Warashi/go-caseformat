@@ -13,6 +13,11 @@ func TestLowerCamel_ToLowerHyphen(t *testing.T) {
 			s:    LowerCamel("lowerCamel"),
 			want: "lower-camel",
 		},
+		{
+			name: "normal_JSON_case",
+			s:    LowerCamel("lowerJSONCamel"),
+			want: "lower-json-camel",
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -33,6 +38,11 @@ func TestLowerCamel_ToLowerUnderscore(t *testing.T) {
 			name: "normal_case",
 			s:    LowerCamel("lowerCamel"),
 			want: "lower_camel",
+		},
+		{
+			name: "normal_JSON_case",
+			s:    LowerCamel("lowerJSONCamel"),
+			want: "lower_json_camel",
 		},
 	}
 	for _, tt := range tests {
@@ -55,6 +65,12 @@ func TestLowerCamel_ToLowerCamel(t *testing.T) {
 			s:    LowerCamel("lowerCamel"),
 			want: "lowerCamel",
 		},
+		{
+			name: "normal_JSON_case",
+			s:    LowerCamel("lowerJSONCamel"),
+			want: "lowerJSONCamel",
+		},
+
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -76,6 +92,12 @@ func TestLowerCamel_ToUpperHyphen(t *testing.T) {
 			s:    LowerCamel("lowerCamel"),
 			want: "LOWER-CAMEL",
 		},
+		{
+			name: "normal_JSON_case",
+			s:    LowerCamel("lowerJSONCamel"),
+			want: "LOWER-JSON-CAMEL",
+		},
+
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -97,6 +119,12 @@ func TestLowerCamel_ToUpperUnderscore(t *testing.T) {
 			s:    LowerCamel("lowerCamel"),
 			want: "LOWER_CAMEL",
 		},
+		{
+			name: "normal_JSON_case",
+			s:    LowerCamel("lowerJSONCamel"),
+			want: "LOWER_JSON_CAMEL",
+		},
+
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -118,6 +146,12 @@ func TestLowerCamel_ToUpperCamel(t *testing.T) {
 			s:    LowerCamel("lowerCamel"),
 			want: "LowerCamel",
 		},
+		{
+			name: "normal_JSON_case",
+			s:    LowerCamel("lowerJSONCamel"),
+			want: "LowerJSONCamel",
+		},
+
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

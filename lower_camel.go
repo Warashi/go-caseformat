@@ -7,26 +7,55 @@ import (
 
 type LowerCamel string
 
-func (s LowerCamel) toLowerDelim(delim rune) string {
-	var b strings.Builder
-	b.Grow(len(s) * 2)
+type beforeCase int
 
+const (
+	none beforeCase = iota
+	lower
+	upper
+	deliminator
+)
+
+func (s LowerCamel) toLowerDelim(delim rune) string {
 	rs := []rune(s)
-	delimCandidate := false
-	for i := range rs {
+	ret := make([]rune, 0, len(rs)*2)
+
+	before := none
+	for i := len(rs) - 1; i >= 0; i-- {
+		if before == none {
+			ret = append(ret, unicode.ToLower(rs[i]))
+		}
 		switch {
-		case delimCandidate && unicode.IsUpper(rs[i]):
-			b.WriteRune(delim)
-			fallthrough
+		case unicode.IsLower(rs[i]):
+			switch before {
+			case lower:
+				ret = append(ret, rs[i])
+			case upper:
+				ret = append(ret, delim, rs[i])
+			case deliminator:
+				ret = append(ret, rs[i])
+			}
+			before = lower
 		case unicode.IsUpper(rs[i]):
-			b.WriteRune(unicode.ToLower(rs[i]))
-			delimCandidate = false
-		default:
-			b.WriteRune(rs[i])
-			delimCandidate = true
+			switch before {
+			case lower:
+				ret = append(ret, unicode.ToLower(rs[i]), delim)
+				before = deliminator
+				continue
+			case upper:
+				ret = append(ret, unicode.ToLower(rs[i]))
+			case deliminator:
+				ret = append(ret, unicode.ToLower(rs[i]))
+			}
+			before = upper
 		}
 	}
-	return b.String()
+
+	// reverse ret
+	for i, j := 0, len(ret)-1; i < j; i, j = i+1, j-1 {
+		ret[i], ret[j] = ret[j], ret[i]
+	}
+	return string(ret)
 }
 
 func (s LowerCamel) ToLowerHyphen() string {
