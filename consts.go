@@ -1,6 +1,6 @@
 package caseformat
 
 const (
-	hyphen = '-'
+	hyphen     = '-'
 	underscore = '_'
 )

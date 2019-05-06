@@ -31,5 +31,3 @@ func (s upperCamel) ToUpperUnderscore() string {
 func (s upperCamel) ToUpperCamel() string {
 	return string(s)
 }
-
-

@@ -29,4 +29,3 @@ func (s upperUnderscore) ToUpperUnderscore() string {
 func (s upperUnderscore) ToUpperCamel() string {
 	return lowerUnderscore(s.ToLowerUnderscore()).ToUpperCamel()
 }
-

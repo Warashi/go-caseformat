@@ -50,4 +50,3 @@ func (s lowerHyphen) ToUpperUnderscore() string {
 func (s lowerHyphen) ToUpperCamel() string {
 	return s.toCamel(true)
 }
-

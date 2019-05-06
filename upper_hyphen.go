@@ -29,4 +29,3 @@ func (s upperHyphen) ToUpperUnderscore() string {
 func (s upperHyphen) ToUpperCamel() string {
 	return lowerHyphen(s.ToLowerHyphen()).ToUpperCamel()
 }
-

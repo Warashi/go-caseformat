@@ -50,4 +50,3 @@ func (s lowerUnderscore) ToUpperUnderscore() string {
 func (s lowerUnderscore) ToUpperCamel() string {
 	return s.toCamel(true)
 }
-
